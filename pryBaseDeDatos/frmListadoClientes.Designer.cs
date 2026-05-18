@@ -38,13 +38,13 @@
             this.dgvGrilla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvGrilla.Location = new System.Drawing.Point(12, 12);
             this.dgvGrilla.Name = "dgvGrilla";
-            this.dgvGrilla.Size = new System.Drawing.Size(521, 150);
+            this.dgvGrilla.Size = new System.Drawing.Size(521, 233);
             this.dgvGrilla.TabIndex = 0;
             this.dgvGrilla.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // btnListar
             // 
-            this.btnListar.Location = new System.Drawing.Point(21, 230);
+            this.btnListar.Location = new System.Drawing.Point(12, 251);
             this.btnListar.Name = "btnListar";
             this.btnListar.Size = new System.Drawing.Size(75, 23);
             this.btnListar.TabIndex = 1;
@@ -61,7 +61,7 @@
             this.Controls.Add(this.dgvGrilla);
             this.Name = "frmListadoClientes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmMostrarDatos";
+            this.Text = "Mostrar Datos";
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).EndInit();
             this.ResumeLayout(false);
 

@@ -27,5 +27,11 @@ namespace pryBaseDeDatos
             frmListadoClientes x = new frmListadoClientes();
             x.ShowDialog();
         }
+
+        private void listadoDeDeudoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmClientesDeudores x = new frmClientesDeudores();
+            x.ShowDialog();
+        }
     }
 }
