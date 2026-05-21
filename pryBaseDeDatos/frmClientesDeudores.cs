@@ -26,5 +26,12 @@ namespace pryBaseDeDatos
             lblTotal2.Text = x.TotalDeuda.ToString();
             lblPromedio2.Text = x.PromedioDeuda.ToString();
         }
+
+        private void btnReportar_Click(object sender, EventArgs e)
+        {
+            clsClientes x = new clsClientes();
+            x.ReporteCliente();
+            MessageBox.Show("Reporte generado con exito");
+        }
     }
 }

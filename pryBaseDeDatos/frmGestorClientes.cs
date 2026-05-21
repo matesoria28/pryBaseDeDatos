@@ -33,5 +33,10 @@ namespace pryBaseDeDatos
             frmClientesDeudores x = new frmClientesDeudores();
             x.ShowDialog();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
