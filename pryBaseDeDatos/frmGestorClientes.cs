@@ -38,5 +38,17 @@ namespace pryBaseDeDatos
         {
 
         }
+
+        private void buscarNuevoClienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmBusquedaCliente x = new frmBusquedaCliente();
+            x.ShowDialog();
+        }
+
+        private void agregarNuevosClientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAgregarCliente x = new frmAgregarCliente();
+            x.ShowDialog();
+        }
     }
 }

@@ -21,23 +21,58 @@ namespace pryBaseDeDatos
         private string CadenaConexion = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=Clientes.mdb";
         private string tabla = "Cliente";
 
+        //Variable de los datos calculados en clientes deudores
         private decimal Deuda;
         private Int32 Cantidad;
 
+        private Int32 idCli;
+        private String nom;
+        private Decimal deu;
+        private Decimal lim;
+        private Int32 idAu;
         public decimal TotalDeuda
         {
             get { return Deuda; }
+
         }
 
         public Int32 CantidadClientes
         {
             get { return Cantidad; }
+
         }
 
         public Decimal PromedioDeuda
         {
             get { return Deuda / Cantidad; }
+
         }
+        public Int32 IdCliente
+        {
+            get { return idCli; }
+            set { idCli = value; }
+        }
+        public String Nombre
+        {
+            get { return nom; }
+            set { nom = value; }
+        }
+        public Decimal Deudas
+        {
+            get { return deu; }
+            set { deu = value; }
+        }
+        public Decimal Limite
+        {
+            get { return lim; }
+            set { lim = value; }
+        }
+        public Int32 IdAutomobil
+        {
+            get { return idAu; }
+            set { idAu = value; }
+        }
+
 
         public void Listar(DataGridView Grilla)
         {
@@ -113,7 +148,7 @@ namespace pryBaseDeDatos
                 comando.CommandText = tabla;
 
                 OleDbDataReader DR = comando.ExecuteReader();
-                StreamWriter AD = new StreamWriter("ReporteClientes.csv",false,Encoding.UTF8);
+                StreamWriter AD = new StreamWriter("ReporteClientes.csv", false, Encoding.UTF8);
 
                 AD.WriteLine("Listado de Clientes\n");
                 AD.WriteLine("Codigo;Nombre;Deuda");
@@ -152,7 +187,35 @@ namespace pryBaseDeDatos
             }
         }
 
+        public void Buscar(Int32 IDCliente)
+        {
+            try
+            {
+                conexion.ConnectionString = CadenaConexion;
+                conexion.Open();
+                comando.Connection = conexion;
+                comando.CommandType = CommandType.TableDirect;
+                comando.CommandText = tabla;
+                OleDbDataReader DR = comando.ExecuteReader();
+                while (DR.Read())
+                {
+                    if (DR.GetInt32(0) == IDCliente)
+                    {
+                        idCli = DR.GetInt32(0);
+                        nom = DR.GetString(1);
+                        deu = DR.GetDecimal(2);
+                        lim = DR.GetDecimal(3);
+                        idAu = DR.GetInt32(4);
+                    }
+                }
+                conexion.Close();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+            }
 
+        }
 
 
 
