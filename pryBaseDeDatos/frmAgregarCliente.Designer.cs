@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.gbCargaDatos = new System.Windows.Forms.GroupBox();
-            this.lblNombre = new System.Windows.Forms.Label();
-            this.lblLimite = new System.Windows.Forms.Label();
-            this.lblAutomobil = new System.Windows.Forms.Label();
-            this.cmbAutomobil = new System.Windows.Forms.ComboBox();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.txtLimite = new System.Windows.Forms.TextBox();
             this.btnCargar = new System.Windows.Forms.Button();
+            this.txtLimite = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.cmbAutomovil = new System.Windows.Forms.ComboBox();
+            this.lblAutomobil = new System.Windows.Forms.Label();
+            this.lblLimite = new System.Windows.Forms.Label();
+            this.lblNombre = new System.Windows.Forms.Label();
             this.gbCargaDatos.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,7 +44,7 @@
             this.gbCargaDatos.Controls.Add(this.btnCargar);
             this.gbCargaDatos.Controls.Add(this.txtLimite);
             this.gbCargaDatos.Controls.Add(this.txtNombre);
-            this.gbCargaDatos.Controls.Add(this.cmbAutomobil);
+            this.gbCargaDatos.Controls.Add(this.cmbAutomovil);
             this.gbCargaDatos.Controls.Add(this.lblAutomobil);
             this.gbCargaDatos.Controls.Add(this.lblLimite);
             this.gbCargaDatos.Controls.Add(this.lblNombre);
@@ -55,23 +55,37 @@
             this.gbCargaDatos.TabStop = false;
             this.gbCargaDatos.Text = "Carga de Datos";
             // 
-            // lblNombre
+            // btnCargar
             // 
-            this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(16, 38);
-            this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(95, 13);
-            this.lblNombre.TabIndex = 0;
-            this.lblNombre.Text = "Nombre y Apellido:";
+            this.btnCargar.Location = new System.Drawing.Point(273, 221);
+            this.btnCargar.Name = "btnCargar";
+            this.btnCargar.Size = new System.Drawing.Size(110, 23);
+            this.btnCargar.TabIndex = 6;
+            this.btnCargar.Text = "Cargar";
+            this.btnCargar.UseVisualStyleBackColor = true;
+            this.btnCargar.Click += new System.EventHandler(this.btnCargar_Click);
             // 
-            // lblLimite
+            // txtLimite
             // 
-            this.lblLimite.AutoSize = true;
-            this.lblLimite.Location = new System.Drawing.Point(19, 99);
-            this.lblLimite.Name = "lblLimite";
-            this.lblLimite.Size = new System.Drawing.Size(88, 13);
-            this.lblLimite.TabIndex = 1;
-            this.lblLimite.Text = "Limite de Credito:";
+            this.txtLimite.Location = new System.Drawing.Point(123, 91);
+            this.txtLimite.Name = "txtLimite";
+            this.txtLimite.Size = new System.Drawing.Size(161, 20);
+            this.txtLimite.TabIndex = 5;
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(123, 38);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(260, 20);
+            this.txtNombre.TabIndex = 4;
+            // 
+            // cmbAutomovil
+            // 
+            this.cmbAutomovil.FormattingEnabled = true;
+            this.cmbAutomovil.Location = new System.Drawing.Point(123, 155);
+            this.cmbAutomovil.Name = "cmbAutomovil";
+            this.cmbAutomovil.Size = new System.Drawing.Size(260, 21);
+            this.cmbAutomovil.TabIndex = 3;
             // 
             // lblAutomobil
             // 
@@ -82,36 +96,23 @@
             this.lblAutomobil.TabIndex = 2;
             this.lblAutomobil.Text = "Automobil:";
             // 
-            // cmbAutomobil
+            // lblLimite
             // 
-            this.cmbAutomobil.FormattingEnabled = true;
-            this.cmbAutomobil.Location = new System.Drawing.Point(123, 155);
-            this.cmbAutomobil.Name = "cmbAutomobil";
-            this.cmbAutomobil.Size = new System.Drawing.Size(260, 21);
-            this.cmbAutomobil.TabIndex = 3;
+            this.lblLimite.AutoSize = true;
+            this.lblLimite.Location = new System.Drawing.Point(19, 99);
+            this.lblLimite.Name = "lblLimite";
+            this.lblLimite.Size = new System.Drawing.Size(88, 13);
+            this.lblLimite.TabIndex = 1;
+            this.lblLimite.Text = "Limite de Credito:";
             // 
-            // txtNombre
+            // lblNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(123, 38);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(260, 20);
-            this.txtNombre.TabIndex = 4;
-            // 
-            // txtLimite
-            // 
-            this.txtLimite.Location = new System.Drawing.Point(123, 91);
-            this.txtLimite.Name = "txtLimite";
-            this.txtLimite.Size = new System.Drawing.Size(161, 20);
-            this.txtLimite.TabIndex = 5;
-            // 
-            // btnCargar
-            // 
-            this.btnCargar.Location = new System.Drawing.Point(273, 221);
-            this.btnCargar.Name = "btnCargar";
-            this.btnCargar.Size = new System.Drawing.Size(110, 23);
-            this.btnCargar.TabIndex = 6;
-            this.btnCargar.Text = "Cargar";
-            this.btnCargar.UseVisualStyleBackColor = true;
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Location = new System.Drawing.Point(16, 38);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(95, 13);
+            this.lblNombre.TabIndex = 0;
+            this.lblNombre.Text = "Nombre y Apellido:";
             // 
             // frmAgregarCliente
             // 
@@ -122,6 +123,7 @@
             this.Name = "frmAgregarCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar Cliente";
+            this.Load += new System.EventHandler(this.frmAgregarCliente_Load);
             this.gbCargaDatos.ResumeLayout(false);
             this.gbCargaDatos.PerformLayout();
             this.ResumeLayout(false);
@@ -134,7 +136,7 @@
         private System.Windows.Forms.Button btnCargar;
         private System.Windows.Forms.TextBox txtLimite;
         private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.ComboBox cmbAutomobil;
+        private System.Windows.Forms.ComboBox cmbAutomovil;
         private System.Windows.Forms.Label lblAutomobil;
         private System.Windows.Forms.Label lblLimite;
         private System.Windows.Forms.Label lblNombre;

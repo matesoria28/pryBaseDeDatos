@@ -18,7 +18,8 @@ namespace pryBaseDeDatos
         private OleDbCommand comando = new OleDbCommand();
         private OleDbDataAdapter adaptador = new OleDbDataAdapter();
 
-        private string CadenaConexion = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=Clientes.mdb";
+       // private string CadenaConexion = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=Clientes.mdb";
+       private string CadenaConexion = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=..\\..\\BDClientes\\Clientes.mdb";
         private string tabla = "Cliente";
 
         //Variable de los datos calculados en clientes deudores
@@ -67,7 +68,7 @@ namespace pryBaseDeDatos
             get { return lim; }
             set { lim = value; }
         }
-        public Int32 IdAutomobil
+        public Int32 IdAutomovil
         {
             get { return idAu; }
             set { idAu = value; }
@@ -217,8 +218,43 @@ namespace pryBaseDeDatos
 
         }
 
+        public void Agregar()
+        {
+            string tabla = "Cliente";
+            try
+            {
+                conexion.ConnectionString = CadenaConexion;
+                conexion.Open();
 
+                comando.Connection = conexion;
+                comando.CommandType = CommandType.TableDirect;
+                comando.CommandText = "Cliente";
 
+                adaptador = new OleDbDataAdapter(comando);
+                DataSet DS = new DataSet();
+                adaptador.Fill(DS, tabla);
+
+                DataTable Tabla = DS.Tables[tabla];
+                DataRow Fila = Tabla.NewRow();
+
+                Fila["Nombre"] = nom;
+                Fila["Deuda"] = 0;
+                Fila["Limite"] = lim;
+                Fila["idAutomovil"] = idAu;  
+
+                Tabla.Rows.Add(Fila);
+                OleDbCommandBuilder CB = new OleDbCommandBuilder(adaptador);
+                adaptador.Update(DS, tabla);
+
+                conexion.Close();
+            }
+
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+
+            }
+        }
 
 
 
