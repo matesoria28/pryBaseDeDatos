@@ -35,5 +35,24 @@ namespace pryBaseDeDatos
             txtLimite.Text="";
             cmbAutomovil.SelectedIndex = 0;
         }
+
+        private void btnSQL_Click(object sender, EventArgs e)
+        {
+            clsClientes x = new clsClientes();
+            x.Nombre = txtNombre.Text;
+            x.Limite = Convert.ToDecimal(txtLimite.Text);
+            x.IdAutomovil = Convert.ToInt32(cmbAutomovil.SelectedValue);
+            x.AgregarNuevoRegistro();
+
+            MessageBox.Show("Cliente Grabado!!");
+            txtNombre.Text = "";
+            txtLimite.Text = "";
+            cmbAutomovil.SelectedIndex = 0;
+        }
+
+        private void cmbAutomovil_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

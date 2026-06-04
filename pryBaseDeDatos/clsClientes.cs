@@ -257,6 +257,91 @@ namespace pryBaseDeDatos
         }
 
 
+        public void Modificar(Int32 idCliente)
+        {
+            try 
+            {
+                String sql = "";
+                sql = "UPDATE Cliente SET Limite = " + lim + " WHERE idCliente = "+ idCliente.ToString();
+                
+                conexion.ConnectionString = CadenaConexion;
+                conexion.Open();
+
+                comando.Connection = conexion;
+                comando.CommandType = CommandType.Text;
+                comando.CommandText = sql;
+
+                comando.ExecuteNonQuery();
+
+                conexion.Close();
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show(e.ToString());
+            }
+
+        }
+
+
+        public void Eliminar(Int32 idCliente)
+        {
+            try
+            {
+                String sql = "";
+                sql = "DELETE * FROM Cliente WHERE idCliente = " + idCliente.ToString();
+
+                conexion.ConnectionString = CadenaConexion;
+                conexion.Open();
+
+                comando.Connection = conexion;
+                comando.CommandType = CommandType.Text;
+                comando.CommandText = sql;
+
+                comando.ExecuteNonQuery();
+
+                conexion.Close();
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+            }
+
+        }
+
+        public void AgregarNuevoRegistro()
+        {
+            try
+            {
+                String sql = "";
+                sql = "INSERT INTO Cliente (Nombre,Deuda,Limite,idAutomovil)";
+                sql = sql + "VALUES ('" + nom + "',0," + lim.ToString() + "," + idAu.ToString() + ")";
+                conexion.ConnectionString = CadenaConexion;
+                conexion.Open();
+
+                comando.Connection = conexion;
+                comando.CommandType = CommandType.Text;
+                comando.CommandText = sql;
+
+                comando.ExecuteNonQuery();
+
+                conexion.Close();
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+            }
+
+        }
+
+
+
+
+
+
+
+
 
 
     }

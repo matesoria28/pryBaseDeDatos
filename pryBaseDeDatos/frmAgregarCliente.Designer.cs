@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.gbCargaDatos = new System.Windows.Forms.GroupBox();
+            this.btnSQL = new System.Windows.Forms.Button();
             this.btnCargar = new System.Windows.Forms.Button();
             this.txtLimite = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
@@ -41,6 +42,7 @@
             // 
             // gbCargaDatos
             // 
+            this.gbCargaDatos.Controls.Add(this.btnSQL);
             this.gbCargaDatos.Controls.Add(this.btnCargar);
             this.gbCargaDatos.Controls.Add(this.txtLimite);
             this.gbCargaDatos.Controls.Add(this.txtNombre);
@@ -54,6 +56,16 @@
             this.gbCargaDatos.TabIndex = 0;
             this.gbCargaDatos.TabStop = false;
             this.gbCargaDatos.Text = "Carga de Datos";
+            // 
+            // btnSQL
+            // 
+            this.btnSQL.Location = new System.Drawing.Point(123, 221);
+            this.btnSQL.Name = "btnSQL";
+            this.btnSQL.Size = new System.Drawing.Size(110, 23);
+            this.btnSQL.TabIndex = 7;
+            this.btnSQL.Text = "Agregar cliente SQL";
+            this.btnSQL.UseVisualStyleBackColor = true;
+            this.btnSQL.Click += new System.EventHandler(this.btnSQL_Click);
             // 
             // btnCargar
             // 
@@ -86,6 +98,7 @@
             this.cmbAutomovil.Name = "cmbAutomovil";
             this.cmbAutomovil.Size = new System.Drawing.Size(260, 21);
             this.cmbAutomovil.TabIndex = 3;
+            this.cmbAutomovil.SelectedIndexChanged += new System.EventHandler(this.cmbAutomovil_SelectedIndexChanged);
             // 
             // lblAutomobil
             // 
@@ -140,5 +153,6 @@
         private System.Windows.Forms.Label lblAutomobil;
         private System.Windows.Forms.Label lblLimite;
         private System.Windows.Forms.Label lblNombre;
+        private System.Windows.Forms.Button btnSQL;
     }
 }

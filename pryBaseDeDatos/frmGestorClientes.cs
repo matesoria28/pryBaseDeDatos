@@ -50,5 +50,11 @@ namespace pryBaseDeDatos
             frmAgregarCliente x = new frmAgregarCliente();
             x.ShowDialog();
         }
+
+        private void consultaDeUnClienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmEditarCliente x = new frmEditarCliente();
+            x.ShowDialog();
+        }
     }
 }

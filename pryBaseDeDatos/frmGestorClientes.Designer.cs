@@ -117,7 +117,8 @@
             // 
             this.consultaDeUnClienteToolStripMenuItem.Name = "consultaDeUnClienteToolStripMenuItem";
             this.consultaDeUnClienteToolStripMenuItem.Size = new System.Drawing.Size(260, 22);
-            this.consultaDeUnClienteToolStripMenuItem.Text = "Consulta de un cliente...";
+            this.consultaDeUnClienteToolStripMenuItem.Text = "Editar Cliente...";
+            this.consultaDeUnClienteToolStripMenuItem.Click += new System.EventHandler(this.consultaDeUnClienteToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 

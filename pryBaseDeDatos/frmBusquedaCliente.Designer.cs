@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.lblCodigoCliente = new System.Windows.Forms.Label();
-            this.txtBuscar = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.txtCodigoCliente = new System.Windows.Forms.TextBox();
             this.gbDatosCliente = new System.Windows.Forms.GroupBox();
-            this.lblNombre = new System.Windows.Forms.Label();
-            this.lblDeuda = new System.Windows.Forms.Label();
-            this.lblLimite = new System.Windows.Forms.Label();
-            this.lblNombreR = new System.Windows.Forms.Label();
-            this.lblDeudaR = new System.Windows.Forms.Label();
             this.lblLimiteR = new System.Windows.Forms.Label();
+            this.lblDeudaR = new System.Windows.Forms.Label();
+            this.lblNombreR = new System.Windows.Forms.Label();
+            this.lblLimite = new System.Windows.Forms.Label();
+            this.lblDeuda = new System.Windows.Forms.Label();
+            this.lblNombre = new System.Windows.Forms.Label();
             this.gbDatosCliente.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,15 +50,15 @@
             this.lblCodigoCliente.TabIndex = 0;
             this.lblCodigoCliente.Text = "Codigo del cliente:";
             // 
-            // txtBuscar
+            // btnBuscar
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(222, 56);
-            this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(147, 23);
-            this.txtBuscar.TabIndex = 1;
-            this.txtBuscar.Text = "buscar";
-            this.txtBuscar.UseVisualStyleBackColor = true;
-            this.txtBuscar.Click += new System.EventHandler(this.txtBuscar_Click);
+            this.btnBuscar.Location = new System.Drawing.Point(222, 56);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(147, 23);
+            this.btnBuscar.TabIndex = 1;
+            this.btnBuscar.Text = "buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click_1);
             // 
             // txtCodigoCliente
             // 
@@ -82,23 +82,29 @@
             this.gbDatosCliente.TabStop = false;
             this.gbDatosCliente.Text = "Datos del cliente";
             // 
-            // lblNombre
+            // lblLimiteR
             // 
-            this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(20, 35);
-            this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(47, 13);
-            this.lblNombre.TabIndex = 0;
-            this.lblNombre.Text = "Nombre:";
+            this.lblLimiteR.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblLimiteR.Location = new System.Drawing.Point(111, 143);
+            this.lblLimiteR.Name = "lblLimiteR";
+            this.lblLimiteR.Size = new System.Drawing.Size(218, 23);
+            this.lblLimiteR.TabIndex = 5;
             // 
-            // lblDeuda
+            // lblDeudaR
             // 
-            this.lblDeuda.AutoSize = true;
-            this.lblDeuda.Location = new System.Drawing.Point(20, 91);
-            this.lblDeuda.Name = "lblDeuda";
-            this.lblDeuda.Size = new System.Drawing.Size(42, 13);
-            this.lblDeuda.TabIndex = 1;
-            this.lblDeuda.Text = "Deuda:";
+            this.lblDeudaR.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblDeudaR.Location = new System.Drawing.Point(111, 81);
+            this.lblDeudaR.Name = "lblDeudaR";
+            this.lblDeudaR.Size = new System.Drawing.Size(218, 23);
+            this.lblDeudaR.TabIndex = 4;
+            // 
+            // lblNombreR
+            // 
+            this.lblNombreR.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblNombreR.Location = new System.Drawing.Point(111, 25);
+            this.lblNombreR.Name = "lblNombreR";
+            this.lblNombreR.Size = new System.Drawing.Size(218, 23);
+            this.lblNombreR.TabIndex = 3;
             // 
             // lblLimite
             // 
@@ -109,29 +115,23 @@
             this.lblLimite.TabIndex = 2;
             this.lblLimite.Text = "Limite de Credito:";
             // 
-            // lblNombreR
+            // lblDeuda
             // 
-            this.lblNombreR.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblNombreR.Location = new System.Drawing.Point(111, 25);
-            this.lblNombreR.Name = "lblNombreR";
-            this.lblNombreR.Size = new System.Drawing.Size(218, 23);
-            this.lblNombreR.TabIndex = 3;
+            this.lblDeuda.AutoSize = true;
+            this.lblDeuda.Location = new System.Drawing.Point(20, 91);
+            this.lblDeuda.Name = "lblDeuda";
+            this.lblDeuda.Size = new System.Drawing.Size(42, 13);
+            this.lblDeuda.TabIndex = 1;
+            this.lblDeuda.Text = "Deuda:";
             // 
-            // lblDeudaR
+            // lblNombre
             // 
-            this.lblDeudaR.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblDeudaR.Location = new System.Drawing.Point(111, 81);
-            this.lblDeudaR.Name = "lblDeudaR";
-            this.lblDeudaR.Size = new System.Drawing.Size(218, 23);
-            this.lblDeudaR.TabIndex = 4;
-            // 
-            // lblLimiteR
-            // 
-            this.lblLimiteR.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblLimiteR.Location = new System.Drawing.Point(111, 143);
-            this.lblLimiteR.Name = "lblLimiteR";
-            this.lblLimiteR.Size = new System.Drawing.Size(218, 23);
-            this.lblLimiteR.TabIndex = 5;
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Location = new System.Drawing.Point(20, 35);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(47, 13);
+            this.lblNombre.TabIndex = 0;
+            this.lblNombre.Text = "Nombre:";
             // 
             // frmBusquedaCliente
             // 
@@ -140,12 +140,12 @@
             this.ClientSize = new System.Drawing.Size(381, 326);
             this.Controls.Add(this.gbDatosCliente);
             this.Controls.Add(this.txtCodigoCliente);
-            this.Controls.Add(this.txtBuscar);
+            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.lblCodigoCliente);
             this.Name = "frmBusquedaCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Busqueda Cliente";
-            this.Load += new System.EventHandler(this.frmBusquedaCliente_Load);
+//            this.Load += new System.EventHandler(this.frmBusquedaCliente_Load);
             this.gbDatosCliente.ResumeLayout(false);
             this.gbDatosCliente.PerformLayout();
             this.ResumeLayout(false);
@@ -156,7 +156,7 @@
         #endregion
 
         private System.Windows.Forms.Label lblCodigoCliente;
-        private System.Windows.Forms.Button txtBuscar;
+        private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.TextBox txtCodigoCliente;
         private System.Windows.Forms.GroupBox gbDatosCliente;
         private System.Windows.Forms.Label lblLimiteR;
