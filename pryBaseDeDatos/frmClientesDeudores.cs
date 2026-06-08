@@ -24,14 +24,23 @@ namespace pryBaseDeDatos
             x.ListarDeudores(dgvClientes);
             lblCantidad2.Text = x.CantidadClientes.ToString();
             lblTotal2.Text = x.TotalDeuda.ToString();
-            lblPromedio2.Text = x.PromedioDeuda.ToString();
+            lblPromedio2.Text = x.PromedioDeuda.ToString("0,00");
         }
 
         private void btnReportar_Click(object sender, EventArgs e)
         {
+            SaveFileDialog objArchivo = new SaveFileDialog();
+            objArchivo.Title ="Seleccione carpeta y escriba nombre de archivo";
+            objArchivo.RestoreDirectory = true;
+            objArchivo.Filter = "Archivos separados por coma(*.csv)|*.csv|Archivo de texto(*.txt)|*.txt";
+
+            objArchivo.ShowDialog();
+
             clsClientes x = new clsClientes();
-            x.ReporteCliente();
+            x.ReporteCliente(objArchivo.FileName);
             MessageBox.Show("Reporte generado con exito");
         }
+
+       
     }
 }

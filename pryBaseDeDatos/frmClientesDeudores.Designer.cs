@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.gbListadoClientes = new System.Windows.Forms.GroupBox();
+            this.btnReportar = new System.Windows.Forms.Button();
             this.btnListar = new System.Windows.Forms.Button();
             this.lblPromedio2 = new System.Windows.Forms.Label();
             this.lblCantidad2 = new System.Windows.Forms.Label();
@@ -37,7 +38,6 @@
             this.lblCantidad = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
             this.dgvClientes = new System.Windows.Forms.DataGridView();
-            this.btnReportar = new System.Windows.Forms.Button();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,6 +62,17 @@
             this.gbListadoClientes.TabIndex = 2;
             this.gbListadoClientes.TabStop = false;
             this.gbListadoClientes.Text = "Consulta de Datos";
+//            this.gbListadoClientes.Enter += new System.EventHandler(this.gbListadoClientes_Enter);
+            // 
+            // btnReportar
+            // 
+            this.btnReportar.Location = new System.Drawing.Point(237, 418);
+            this.btnReportar.Name = "btnReportar";
+            this.btnReportar.Size = new System.Drawing.Size(113, 23);
+            this.btnReportar.TabIndex = 8;
+            this.btnReportar.Text = "Reportar";
+            this.btnReportar.UseVisualStyleBackColor = true;
+            this.btnReportar.Click += new System.EventHandler(this.btnReportar_Click);
             // 
             // btnListar
             // 
@@ -135,16 +146,6 @@
             this.dgvClientes.Name = "dgvClientes";
             this.dgvClientes.Size = new System.Drawing.Size(497, 260);
             this.dgvClientes.TabIndex = 0;
-            // 
-            // btnReportar
-            // 
-            this.btnReportar.Location = new System.Drawing.Point(237, 418);
-            this.btnReportar.Name = "btnReportar";
-            this.btnReportar.Size = new System.Drawing.Size(113, 23);
-            this.btnReportar.TabIndex = 8;
-            this.btnReportar.Text = "Reportar";
-            this.btnReportar.UseVisualStyleBackColor = true;
-            this.btnReportar.Click += new System.EventHandler(this.btnReportar_Click);
             // 
             // Column1
             // 

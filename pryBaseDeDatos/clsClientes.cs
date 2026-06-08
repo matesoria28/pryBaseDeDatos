@@ -240,7 +240,7 @@ namespace pryBaseDeDatos
                 Fila["Nombre"] = nom;
                 Fila["Deuda"] = 0;
                 Fila["Limite"] = lim;
-                Fila["idAutomovil"] = idAu;  
+                Fila["idAutomovil"] = idAu;
 
                 Tabla.Rows.Add(Fila);
                 OleDbCommandBuilder CB = new OleDbCommandBuilder(adaptador);
@@ -249,11 +249,34 @@ namespace pryBaseDeDatos
                 conexion.Close();
             }
 
-            catch (Exception e)
-            {
-                MessageBox.Show(e.ToString());
+            //catch (Exception e)
+            //{
+            //    MessageBox.Show(e.ToString());
 
+            //}
+
+            catch (FormatException)
+            {
+                MessageBox.Show("No se puede convertir el tipo de dato");
             }
+            catch (DivideByZeroException)
+            {
+                MessageBox.Show("No se puede dividir por cero");
+            }
+            catch (ArgumentException)
+            {
+                MessageBox.Show("El valor del argumento no puede ser nulo");
+            }
+            catch (IndexOutOfRangeException)
+            {
+                MessageBox.Show("El índice se encuentra fuera del rango de la matriz");
+            }
+            finally
+            {
+                //lo que va aca se ejecuta siempre, haya o no error
+            }
+
+
         }
 
 
@@ -335,9 +358,92 @@ namespace pryBaseDeDatos
 
         }
 
+        public void ListarForeach(DataGridView Grilla)
+        {
+            try
+            {
+                conexion.ConnectionString = CadenaConexion;
+                conexion.Open();
+
+                comando.Connection = conexion;
+                comando.CommandType = CommandType.TableDirect;
+                comando.CommandText = tabla;
+
+                adaptador = new OleDbDataAdapter(comando);
+                DataSet DS = new DataSet();
+                adaptador.Fill(DS, tabla);
+
+                if (DS.Tables[tabla].Rows.Count > 0) //si ese DS tiene filas
+                {
+                    foreach (DataRow x in DS.Tables[tabla].Rows)
+                    {
+                        Grilla.Rows.Add(x["Nombre"], x["idAutomovil"]);
+                    }
+                }
+
+                conexion.Close();
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+            }
+        }
+
+        public void ReporteCliente(String NombreArchivo)
+        {
+            try
+            {
+                conexion.ConnectionString = CadenaConexion;
+                conexion.Open();
+
+                comando.Connection = conexion;
+                comando.CommandType = CommandType.TableDirect;
+                comando.CommandText = tabla;
+
+                adaptador = new OleDbDataAdapter(comando);  
+                DataSet DS = new DataSet();
+                adaptador.Fill(DS, tabla);
+
+                OleDbDataReader DR = comando.ExecuteReader();
+                StreamWriter AD = new StreamWriter(NombreArchivo, false, Encoding.UTF8);
+
+                AD.WriteLine("Listado de Clientes\n");
+                AD.WriteLine("Codigo;Nombre;Deuda");
+
+                Cantidad = 0;
+                Deuda = 0;
 
 
+                if (DS.Tables[tabla].Rows.Count>0)
+                {
+                    foreach (DataRow fila in DS.Tables[tabla].Rows)
+                    {
+                        AD.Write(fila["idCliente"]);
+                        AD.Write(";");
+                        AD.Write(fila["Nombre"]);
+                        AD.Write(";");
+                        AD.WriteLine(fila["deuda"]);
 
+                        Cantidad++;
+                        Deuda = Deuda + Convert.ToDecimal(fila["deuda"]);
+
+                    }
+                    AD.Write("\nCantidad de Clientes:;;");
+                    AD.WriteLine(Cantidad);
+                    AD.Write("Deuda de los clientes:;;");
+                    AD.WriteLine(Deuda);
+                    AD.Write("Promedio de deuda:;;");
+                    AD.WriteLine(Deuda / Cantidad);
+                }
+                AD.Close();
+                conexion.Close();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+            }
+        }
 
 
 

@@ -56,5 +56,16 @@ namespace pryBaseDeDatos
             frmEditarCliente x = new frmEditarCliente();
             x.ShowDialog();
         }
+
+        private void ventasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listadoDeClientesForeachToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmClientesForeach x = new frmClientesForeach();
+            x.ShowDialog();
+        }
     }
 }

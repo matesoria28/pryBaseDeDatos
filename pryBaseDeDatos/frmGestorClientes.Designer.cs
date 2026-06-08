@@ -42,6 +42,7 @@
             this.listadoDeDeudoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listadoDeClientesOrdenadosPorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ventasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listadoDeClientesForeachToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -88,7 +89,8 @@
             this.toolStripMenuItem2,
             this.listadoDeTodosLosClientesToolStripMenuItem,
             this.listadoDeDeudoresToolStripMenuItem,
-            this.listadoDeClientesOrdenadosPorToolStripMenuItem});
+            this.listadoDeClientesOrdenadosPorToolStripMenuItem,
+            this.listadoDeClientesForeachToolStripMenuItem});
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
             this.clientesToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.clientesToolStripMenuItem.Text = "Clientes";
@@ -150,6 +152,14 @@
             this.ventasToolStripMenuItem.Name = "ventasToolStripMenuItem";
             this.ventasToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
             this.ventasToolStripMenuItem.Text = "Ventas";
+            this.ventasToolStripMenuItem.Click += new System.EventHandler(this.ventasToolStripMenuItem_Click);
+            // 
+            // listadoDeClientesForeachToolStripMenuItem
+            // 
+            this.listadoDeClientesForeachToolStripMenuItem.Name = "listadoDeClientesForeachToolStripMenuItem";
+            this.listadoDeClientesForeachToolStripMenuItem.Size = new System.Drawing.Size(260, 22);
+            this.listadoDeClientesForeachToolStripMenuItem.Text = "Listado de clientes foreach...";
+            this.listadoDeClientesForeachToolStripMenuItem.Click += new System.EventHandler(this.listadoDeClientesForeachToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -187,6 +197,7 @@
         private System.Windows.Forms.ToolStripMenuItem listadoDeDeudoresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listadoDeClientesOrdenadosPorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ventasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listadoDeClientesForeachToolStripMenuItem;
     }
 }
 
