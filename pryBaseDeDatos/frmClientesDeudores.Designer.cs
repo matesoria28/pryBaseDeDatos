@@ -41,12 +41,16 @@
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnImprimir = new System.Windows.Forms.Button();
+            this.prtVentana = new System.Windows.Forms.PrintDialog();
+            this.prtDocumento = new System.Drawing.Printing.PrintDocument();
             this.gbListadoClientes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.SuspendLayout();
             // 
             // gbListadoClientes
             // 
+            this.gbListadoClientes.Controls.Add(this.btnImprimir);
             this.gbListadoClientes.Controls.Add(this.btnReportar);
             this.gbListadoClientes.Controls.Add(this.btnListar);
             this.gbListadoClientes.Controls.Add(this.lblPromedio2);
@@ -62,13 +66,12 @@
             this.gbListadoClientes.TabIndex = 2;
             this.gbListadoClientes.TabStop = false;
             this.gbListadoClientes.Text = "Consulta de Datos";
-//            this.gbListadoClientes.Enter += new System.EventHandler(this.gbListadoClientes_Enter);
             // 
             // btnReportar
             // 
-            this.btnReportar.Location = new System.Drawing.Point(237, 418);
+            this.btnReportar.Location = new System.Drawing.Point(197, 418);
             this.btnReportar.Name = "btnReportar";
-            this.btnReportar.Size = new System.Drawing.Size(113, 23);
+            this.btnReportar.Size = new System.Drawing.Size(124, 23);
             this.btnReportar.TabIndex = 8;
             this.btnReportar.Text = "Reportar";
             this.btnReportar.UseVisualStyleBackColor = true;
@@ -76,9 +79,9 @@
             // 
             // btnListar
             // 
-            this.btnListar.Location = new System.Drawing.Point(383, 418);
+            this.btnListar.Location = new System.Drawing.Point(367, 418);
             this.btnListar.Name = "btnListar";
-            this.btnListar.Size = new System.Drawing.Size(113, 23);
+            this.btnListar.Size = new System.Drawing.Size(124, 23);
             this.btnListar.TabIndex = 7;
             this.btnListar.Text = "Listar Deudores";
             this.btnListar.UseVisualStyleBackColor = true;
@@ -165,6 +168,20 @@
             this.Column4.Name = "Column4";
             this.Column4.Width = 150;
             // 
+            // btnImprimir
+            // 
+            this.btnImprimir.Location = new System.Drawing.Point(29, 418);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(124, 23);
+            this.btnImprimir.TabIndex = 9;
+            this.btnImprimir.Text = "Imprimir";
+            this.btnImprimir.UseVisualStyleBackColor = true;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
+            // 
+            // prtVentana
+            // 
+            this.prtVentana.UseEXDialog = true;
+            // 
             // frmClientesDeudores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -174,6 +191,7 @@
             this.Name = "frmClientesDeudores";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Clientes Deudores";
+            this.Load += new System.EventHandler(this.frmClientesDeudores_Load);
             this.gbListadoClientes.ResumeLayout(false);
             this.gbListadoClientes.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
@@ -196,5 +214,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.Button btnImprimir;
+        private System.Windows.Forms.PrintDialog prtVentana;
+        private System.Drawing.Printing.PrintDocument prtDocumento;
     }
 }

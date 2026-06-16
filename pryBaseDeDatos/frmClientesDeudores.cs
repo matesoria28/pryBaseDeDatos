@@ -41,6 +41,27 @@ namespace pryBaseDeDatos
             MessageBox.Show("Reporte generado con exito");
         }
 
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            {
+                prtVentana.ShowDialog();
+                prtDocumento.PrinterSettings = prtVentana.PrinterSettings;
+                prtDocumento.Print();
+                MessageBox.Show("Reporte Impreso Correctamente");
+            }
+
+        }
+
+        private void prtDocumento_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            clsClientes x = new clsClientes();
+            x.Imprimir(e);
+
+             
+             Font TipoLetra = new Font("Arial", 12);
+             e.Graphics.DrawString("Hola", TipoLetra, Brushes.Blue, 200, 200);
+        }
+
        
     }
 }
